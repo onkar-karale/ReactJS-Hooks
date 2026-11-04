@@ -2,7 +2,7 @@ import type { ComponentType } from "react";
 import HooksIntro from "./HooksIntro";
 import UseCallbackLesson from "./useCallbackLesson/UseCallbackLesson";
 import UseContextLesson from "./useContextLesson/UseContextLesson";
-import CustomHooksLesson from "./UseCustomLesson/CustomHooksLesson";
+import CustomHooksLesson from "./useCustomLesson/CustomHooksLesson";
 import UseEffectLesson from "./useEffectLesson/UseEffectLesson";
 import UseMemoLesson from "./useMemoLesson/UseMemoLesson";
 import UseReducerLesson from "./useReducerLesson/UseReducerLesson";
