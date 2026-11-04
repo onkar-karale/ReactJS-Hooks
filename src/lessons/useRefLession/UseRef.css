@@ -1,0 +1,81 @@
+/* ---------- the ref "box" picture: { current: ... } ---------- */
+.ref-obj {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px dashed var(--primary);
+  border-radius: 8px;
+  background: var(--code-bg);
+  color: var(--code-text);
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  font-size: 0.95rem;
+}
+.ref-obj b {
+  color: var(--success);
+}
+
+/* ---------- three-way comparison cards (state / ref / variable) ---------- */
+.tri {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 10px 0;
+}
+.tri-card {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  min-width: 0;
+}
+.tri-card h4 {
+  margin: 0 0 2px;
+  color: var(--accent);
+}
+.tri-card .small {
+  margin: 0 0 8px;
+}
+.tri-value {
+  margin: 6px 0 10px;
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--success);
+}
+.tri-card.ref .tri-value {
+  color: var(--warning);
+}
+.tri-card.plain .tri-value {
+  color: var(--danger);
+}
+@media (max-width: 760px) {
+  .tri {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- stopwatch ---------- */
+.stopwatch {
+  display: inline-block;
+  min-width: 140px;
+  margin: 0 12px 6px 0;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--code-bg);
+  color: var(--success);
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* ---------- value readouts ---------- */
+.readout {
+  margin: 8px 0 0;
+  padding: 8px 12px;
+  border-left: 3px solid var(--primary);
+  border-radius: 6px;
+  background: var(--primary-faint);
+}
+.readout strong {
+  color: var(--accent);
+}

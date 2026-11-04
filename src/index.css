@@ -1,0 +1,377 @@
+/* ============================================================
+   1. COLOUR PALETTE: the ONLY place colours are defined.
+   Every other file uses var(--name). Never type a hex colour anywhere else.
+   ============================================================ */
+:root {
+  color-scheme: dark;
+
+  /* Surfaces */
+  --bg: #0b1020;
+  --sidebar: #0f1530;
+  --surface: #121a2f;
+  --surface-2: #18223d;
+  --border: #26324f;
+
+  /* Text */
+  --text: #e5e7ef;
+  --muted: #94a3b8;
+  --heading: #ffffff;
+  --accent: #a5b4fc;
+  --on-primary: #ffffff;
+
+  /* Brand */
+  --primary: #6366f1;
+  --primary-soft: rgba(99, 102, 241, 0.12);
+  --primary-faint: rgba(99, 102, 241, 0.08);
+  --primary-hover: rgba(99, 102, 241, 0.25);
+
+  /* Status and highlight colours */
+  --success: #86efac;
+  --success-soft: rgba(34, 197, 94, 0.15);
+  --danger: #fca5a5;
+  --danger-soft: rgba(239, 68, 68, 0.15);
+  --warning: #fcd34d;
+  --warning-soft: rgba(250, 204, 21, 0.07);
+  --warning-border: rgba(250, 204, 21, 0.35);
+  --info: #93c5fd;
+  --violet: #c084fc;
+
+  /* Code */
+  --code-bg: #070b16;
+  --code-text: #e2e8f0;
+  --inline-code-bg: rgba(99, 102, 241, 0.18);
+  --inline-code-text: #c7d2fe;
+}
+
+/* ============================================================
+   2. BASE
+   ============================================================ */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+code,
+pre {
+  font-family:
+    ui-monospace, "Cascadia Code", Consolas, "Courier New", monospace;
+}
+code {
+  background: var(--inline-code-bg);
+  color: var(--inline-code-text);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.88em;
+}
+.small {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.color-line {
+  font-size: 1.15rem;
+}
+.ml {
+  margin-left: 8px;
+} /* tiny utility: replaces inline margin styles */
+
+/* ============================================================
+   3. LAYOUT (the shell in App.tsx)
+   ============================================================ */
+.layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  min-height: 100vh;
+}
+aside {
+  background: var(--sidebar);
+  border-right: 1px solid var(--border);
+  padding: 20px 14px;
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+}
+aside h1 {
+  font-size: 1.1rem;
+  margin: 0 0 16px 6px;
+  color: var(--heading);
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+nav button {
+  text-align: left;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+}
+nav button:hover {
+  background: var(--primary-soft);
+  color: var(--text);
+}
+nav button.active {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+main {
+  padding: 32px;
+  max-width: 100%;
+  min-width: 0;
+}
+@media (max-width: 760px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  aside {
+    position: static;
+    height: auto;
+  }
+  main {
+    padding: 16px;
+  }
+}
+
+/* ============================================================
+   4. SHARED LESSON STYLES (used by every lesson)
+   ============================================================ */
+article h2 {
+  margin: 0 0 4px;
+  color: var(--accent);
+}
+.summary {
+  margin: 0 0 20px;
+  color: var(--muted);
+}
+.lesson-body {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: 12px;
+  min-width: 0;
+}
+
+.example {
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px dashed var(--border);
+}
+.example:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+.example h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: var(--heading);
+}
+.example h4 {
+  margin: 14px 0 4px;
+  color: var(--accent);
+}
+
+.lesson-body button {
+  padding: 8px 14px;
+  margin: 0 8px 6px 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-2);
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+.lesson-body button:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary);
+}
+.lesson-body input {
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+}
+.lesson-body input:focus {
+  outline: 2px solid var(--primary);
+  border-color: transparent;
+}
+
+.anatomy {
+  font-size: 1rem;
+}
+.t-kw {
+  color: var(--violet);
+}
+.t-value {
+  color: var(--success);
+  font-weight: 700;
+}
+.t-setter {
+  color: var(--danger);
+  font-weight: 700;
+}
+.t-hook {
+  color: var(--info);
+  font-weight: 700;
+}
+.t-init {
+  color: var(--warning);
+  font-weight: 700;
+}
+
+.log {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.log li {
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+/* the active choice in a row of buttons */
+.lesson-body button.selected {
+  background: var(--primary);
+  color: var(--on-primary);
+  border-color: var(--primary);
+}
+
+pre {
+  background: var(--code-bg);
+  color: var(--code-text);
+  border: 1px solid var(--border);
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  overflow-x: auto;
+  max-width: 100%;
+  margin: 8px 0 0;
+  white-space: pre;
+}
+pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+
+.note {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: var(--primary-soft);
+  border-left: 4px solid var(--primary);
+  border-radius: 6px;
+  font-size: 0.92rem;
+}
+.demo {
+  margin-top: 10px;
+  padding: 14px;
+  background: var(--primary-faint);
+  border: 1px dashed var(--primary);
+  border-radius: 10px;
+  min-width: 0;
+}
+.demo p {
+  margin: 6px 0;
+}
+
+.compare {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+  margin-top: 8px;
+}
+.compare > * {
+  min-width: 0;
+}
+@media (max-width: 760px) {
+  .compare {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  margin-bottom: 6px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.badge.good {
+  background: var(--success-soft);
+  color: var(--success);
+}
+.badge.bad {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.rule {
+  margin: 16px 0;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--primary-faint);
+}
+.rule h4 {
+  margin: 0 0 4px;
+  color: var(--accent);
+}
+
+.slots {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin-top: 8px;
+  display: block;
+  overflow-x: auto;
+}
+.slots th {
+  background: var(--primary);
+  color: var(--on-primary);
+  text-align: left;
+  padding: 6px 8px;
+}
+.slots td {
+  border: 1px solid var(--border);
+  padding: 6px 8px;
+}
+
+.recap {
+  background: var(--warning-soft);
+  border: 1px solid var(--warning-border);
+  border-radius: 10px;
+  padding: 6px 16px;
+}
+
+.steps {
+  margin: 8px 0 12px;
+  padding-left: 22px;
+}
+.steps li {
+  margin-bottom: 6px;
+}

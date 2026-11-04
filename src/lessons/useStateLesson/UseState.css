@@ -1,0 +1,74 @@
+/* Styles ONLY this lesson uses. Colours come from the palette in index.css, never typed here. */
+
+/* Scoreboard demo */
+.board {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 14px 8px 0;
+  padding: 8px 24px;
+  background: var(--code-bg);
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  vertical-align: middle;
+}
+.board-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  color: var(--warning);
+}
+.board-number {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 2.6rem;
+  line-height: 1.1;
+  color: var(--danger);
+}
+
+/* Lamp and colour swatch */
+.lamp {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin: 0 8px;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+}
+.lamp.on {
+  background: var(--warning);
+  box-shadow: 0 0 14px var(--warning);
+}
+.swatch {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+  border-radius: 3px;
+  vertical-align: middle;
+  border: 1px solid var(--border);
+}
+
+/* Shopping list chips */
+.chip-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px 4px 12px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+.lesson-body .chip button {
+  margin: 0;
+  padding: 0 9px;
+  border-radius: 999px;
+}

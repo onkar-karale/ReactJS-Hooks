@@ -1,0 +1,164 @@
+/* ============================================================
+   Styles used ONLY by the useContext lesson.
+   No hex or rgba colours here: only var(--name) and color-mix()
+   built from the palette in index.css.
+   ============================================================ */
+
+/* ---------- stage headings ---------- */
+.stage {
+  margin-bottom: 36px;
+}
+.stage:last-child {
+  margin-bottom: 0;
+}
+.stage-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  font-size: 1.2rem;
+  color: var(--heading);
+}
+.stage-num {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--on-primary);
+  font-size: 0.9rem;
+}
+.stage-goal {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+/* ---------- nested component boxes (the "chain") ---------- */
+.chain-box {
+  margin-top: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+.chain-box.owns {
+  border-color: var(--success);
+}
+.chain-box.relay {
+  border-color: var(--warning);
+  background: var(--warning-soft);
+}
+.chain-box.ignores {
+  border-style: dashed;
+}
+.chain-box.uses {
+  border-color: var(--info);
+}
+.chain-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.chain-tag {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--accent);
+  font-size: 0.72rem;
+}
+.chain-tag.owns {
+  background: var(--success-soft);
+  color: var(--success);
+}
+.chain-tag.relay {
+  background: var(--warning-soft);
+  color: var(--warning);
+}
+.chain-tag.uses {
+  color: var(--info);
+}
+.chain-box p {
+  margin: 6px 0 0;
+}
+
+.counter {
+  margin: 10px 0 8px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.counter strong {
+  color: var(--warning);
+  font-size: 1rem;
+}
+
+/* ---------- theme demo card ---------- */
+.theme-card {
+  margin-top: 8px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.theme-card p {
+  margin: 4px 0 0;
+}
+.theme-card.dark {
+  background: var(--code-bg);
+  color: var(--code-text);
+}
+.theme-card.light {
+  background: var(--text);
+  color: var(--bg);
+}
+
+/* ---------- radio analogy tags ---------- */
+.three-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+.three-steps > div {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--primary-faint);
+}
+.three-steps h4 {
+  margin: 0 0 4px;
+  color: var(--accent);
+}
+.three-steps p {
+  margin: 0;
+  font-size: 0.88rem;
+}
+@media (max-width: 760px) {
+  .three-steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- mistake cards ---------- */
+.mistake-why {
+  margin: 4px 0 8px;
+}
+.takeaway {
+  margin: 0;
+  padding: 10px 0;
+  color: var(--warning);
+  font-weight: 700;
+}
+.recap ul {
+  margin: 8px 0 12px;
+  padding-left: 20px;
+}
+.recap li {
+  margin-bottom: 6px;
+}
