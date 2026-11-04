@@ -2,7 +2,7 @@ import LessonLayout from "../../components/LessonLayout";
 import Practice from "./Practice";
 import Remember from "./Remember";
 import Understand from "./Understand";
-import "./useCustom.css";
+import "./UseCustom.css";
 
 export default function UseCustomHookLesson() {
   return (
