@@ -6,7 +6,7 @@ import CustomHooksLesson from "./useCustomLesson/CustomHooksLesson";
 import UseEffectLesson from "./useEffectLesson/UseEffectLesson";
 import UseMemoLesson from "./useMemoLesson/UseMemoLesson";
 import UseReducerLesson from "./useReducerLesson/UseReducerLesson";
-import UseRefLesson from "./useRefLession/UseRefLesson";
+import UseRefLesson from "./useRefLesson/UseRefLesson";
 import UseStateLesson from "./useStateLesson/UseStateLesson";
 
 // The shape of one entry in the menu
